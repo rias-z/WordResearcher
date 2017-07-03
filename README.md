@@ -1,4 +1,4 @@
-# WordResercher
+# WordResearcher
 
 テスト対策用検索アプリケーション
 
