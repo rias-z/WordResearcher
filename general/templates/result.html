@@ -2,10 +2,7 @@
 
 {% block content %}
 
-    検索ワード:
-    {{ search_word }}
-
-    <br><br>
+    <h3>検索ワード: {{ search_word }}</h3>
 
     {% for element in query_result %}
         <li><a href="{% url 'general:detail' element.id %}">{{ element.title }}</a>
