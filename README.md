@@ -3,25 +3,13 @@
 テスト対策用検索アプリケーション
 
 ## トップ画面
-
-・キーワード検索=  
-  
-・第1章  
-・第2章  
-…  
+![top.jpeg](https://raw.githubusercontent.com/chestermx/WordResearcher/develop/screen_shot/top.png)
 
 # 検索結果画面
-キーワード検索ワード＝[認証]  
-1- title優先  
-2- content優先  
-  
-・認証について  
-・ネットワークについて  
-・鍵認証とは？  
-…  
+![top.jpeg](https://raw.githubusercontent.com/chestermx/WordResearcher/develop/screen_shot/search.png)
 
-[1] 2 3 4 5 …  
-
+# 詳細画面
+![top.jpeg](https://raw.githubusercontent.com/chestermx/WordResearcher/develop/screen_shot/detail.png)
 
 # モデル
 Title  
