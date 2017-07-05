@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>WordResearcher</title>
+    {% block extrahead %}{% endblock %}
+</head>
+<body>
+
+{# header #}
+<a href="{% url 'general:top' %}">Top</a>
+<HR>
+
+{# contents #}
+{% block content %}{% endblock %}
+
+{# footer #}
+
+</body>
+</html>

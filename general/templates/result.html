@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    検索ワード:
+    {{ search_word }}
+
+    <br><br>
+
+    {% for element in query_result %}
+        <li><a href="{% url 'general:detail' element.id %}">{{ element.title }}</a>
+        (第{{ element.slide_num }}回)</li>
+    {% endfor %}
+
+{% endblock %}

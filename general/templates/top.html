@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Top</h1>
+
+    <h3>= KeywordSearch =</h3>
+    <form action="{% url 'general:search' %}" method="post">
+        {% csrf_token %}
+        kword: <input type="text" name="search_word" placeholder="input kword..."/>
+        <br>
+        <button type="submit" name="mode" value="all">All Search</button>
+        <button type="submit" name="mode" value="title_only">Title Only Search</button>
+        <button type="submit" name="mode" value="category_search">Category Tag Search</button>
+    </form>
+
+    <br><br>
+
+    <h3>= SlideList =</h3>
+
+    <ul>
+    {% for _ in loop_time %}
+        <li>
+        <form name="search_form{{ forloop.counter }}" action="{% url 'general:search' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="search_word" value={{ forloop.counter }}>
+            <input type="hidden" name="mode" value="slide_num_search">
+            <a href="#" onclick="document.search_form{{ forloop.counter }}.submit();">第{{ forloop.counter }}回</a>
+        </form>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <br><br>
+
+{% endblock %}
+

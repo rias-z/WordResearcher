@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h3>[ {{ element.title }} ]</h3>
+
+    <h4>= Content:</h4>
+    {{ element.content }}
+
+    <h4>= Category:</h4>
+
+    {% for cate in category %}
+        <form name="search_form{{ forloop.counter }}" action="{% url 'general:search' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="search_word" value={{ cate }}>
+            <input type="hidden" name="mode" value="category_search">
+            <a href="#" onclick="document.search_form{{ forloop.counter }}.submit();"> {{ cate }} </a>
+        </form>
+    {% endfor %}
+
+    <h4>= Slide:</h4>
+    <form name="search_form" action="{% url 'general:search' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="search_word" value={{ element.slide_num }}>
+        <input type="hidden" name="mode" value="slide_num_search">
+        <a href="#" onclick="document.search_form.submit();">第{{ element.slide_num }}回</a>
+    </form>
+
+{% endblock %}
